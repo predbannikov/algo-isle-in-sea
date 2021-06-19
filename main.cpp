@@ -20,19 +20,20 @@ int counter_isle(std::vector<std::vector<int > > world){
                 stack.push({i, j});
                 while(!stack.empty()) {
                     auto pair = stack.top();
+                    auto [x,y] = stack.top();
                     stack.pop();
-                    world[pair.first][pair.second] = 0;
-                    if(pair.first < world.size()-1 && world[pair.first+1][pair.second] == 1) {
-                        stack.push({pair.first+1, pair.second});
+                    world[x][y] = 0;
+                    if(x < world.size()-1 && world[x+1][y] == 1) {
+                        stack.push({x+1, y});
                     }
-                    if(pair.first > 0 && world[pair.first-1][pair.second] == 1) {
-                        stack.push({pair.first-1, pair.second});
+                    if(x > 0 && world[x-1][y] == 1) {
+                        stack.push({x-1, y});
                     }
-                    if(pair.second < world[i].size()-1 && world[pair.first][pair.second+1] == 1) {
-                        stack.push({pair.first, pair.second+1});
+                    if(y < world[i].size()-1 && world[x][y+1] == 1) {
+                        stack.push({x, y+1});
                     }
-                    if(pair.second > 0 && world[pair.first][pair.second-1] == 1) {
-                        stack.push({pair.first, pair.second-1});
+                    if(y > 0 && world[x][y-1] == 1) {
+                        stack.push({x, y-1});
                     }
                 }
             }
