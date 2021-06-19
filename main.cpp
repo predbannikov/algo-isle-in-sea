@@ -2,14 +2,6 @@
 #include <vector>
 #include <stack>
 
-// 0 0 0 1 1 1 0 1 0
-// 0 0 0 1 0 1 0 0 1
-// 0 1 0 1 1 1 0 0 0
-// 0 1 0 0 0 0 0 0 0
-// 0 0 0 0 0 0 0 0 0
-// 0 1 1 0 0 0 0 0 1
-// 0 1 1 0 0 0 0 1 1
-
 int counter_isle(std::vector<std::vector<int > > world){
     int counter = 0;
     for(int i = 0; i < world.size(); i++) {
